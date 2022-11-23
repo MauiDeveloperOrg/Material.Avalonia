@@ -1,33 +1,33 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-  <PropertyGroup>
-    <OutputType>WinExe</OutputType>
-    <TargetFrameworks>net5.0;net6.0;net7.0</TargetFrameworks>
-  </PropertyGroup>
-  <ItemGroup>
-    <PackageReference Include="Avalonia" />
-    <PackageReference Include="Avalonia.Controls.DataGrid" />
-    <PackageReference Include="Avalonia.Desktop" />
-    <PackageReference Include="Avalonia.Diagnostics" />
-    <PackageReference Include="Avalonia.Themes.Simple" />  
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\DialogHost.Avalonia\DialogHost.Avalonia.csproj" />
-    <ProjectReference Include="..\Material.Avalonia\Material.Avalonia.csproj" />
-    <ProjectReference Include="..\Material.DataGrid\Material.DataGrid.csproj" />
-    <ProjectReference Include="..\Material.Dialog\Material.Dialog.csproj" />
-    <ProjectReference Include="..\Material.Icons.Avalonia\Material.Icons.Avalonia.csproj" />
-    <ProjectReference Include="..\ShowMeTheXaml.Avalonia\ShowMeTheXaml.Avalonia.csproj" />
-    <ProjectReference Include="..\ShowMeTheXaml.Avalonia.AvaloniaEdit\ShowMeTheXaml.Avalonia.AvaloniaEdit.csproj" />
-    <ProjectReference Include="..\ShowMeTheXaml.Avalonia.Generator\ShowMeTheXaml.Avalonia.Generator.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="true"/>
-  </ItemGroup>
+	<PropertyGroup>
+		<OutputType>WinExe</OutputType>
+		<TargetFrameworks>net5.0;net6.0;net7.0</TargetFrameworks>
+	</PropertyGroup>
+	<ItemGroup>
+		<PackageReference Include="Avalonia" />
+		<PackageReference Include="Avalonia.Controls.DataGrid" />
+		<PackageReference Include="Avalonia.Desktop" />
+		<PackageReference Include="Avalonia.Diagnostics" />
+		<PackageReference Include="Avalonia.Themes.Simple" />
+	</ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\DialogHost.Avalonia\DialogHost.Avalonia.csproj" />
+		<ProjectReference Include="..\Material.Avalonia\Material.Avalonia.csproj" />
+		<ProjectReference Include="..\Material.DataGrid\Material.DataGrid.csproj" />
+		<ProjectReference Include="..\Material.Dialog\Material.Dialog.csproj" />
+		<ProjectReference Include="..\Material.Icons.Avalonia\Material.Icons.Avalonia.csproj" />
+		<ProjectReference Include="..\ShowMeTheXaml.Avalonia\ShowMeTheXaml.Avalonia.csproj" />
+		<ProjectReference Include="..\ShowMeTheXaml.Avalonia.AvaloniaEdit\ShowMeTheXaml.Avalonia.AvaloniaEdit.csproj" />
+		<ProjectReference Include="..\ShowMeTheXaml.Avalonia.Generator\ShowMeTheXaml.Avalonia.Generator.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="true"/>
+	</ItemGroup>
 
-  <ItemGroup>
-    <AvaloniaResource Include="Assets\**" />
-  </ItemGroup>
+	<ItemGroup>
+		<AvaloniaResource Include="Assets\**" />
+	</ItemGroup>
 
 	<ItemGroup>
 		<AdditionalFiles Include="**\*.xaml" />
 		<AdditionalFiles Include="**\*.axaml" />
 	</ItemGroup>
-	
+
 </Project>
