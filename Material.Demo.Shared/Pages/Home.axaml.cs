@@ -8,7 +8,7 @@ using Material.Styles.Assists;
 
 namespace Material.Demo.Pages
 {
-    public class Home : UserControl
+    public partial class Home : UserControl
     {
         private MainWindow? _window;
         
@@ -84,10 +84,5 @@ namespace Material.Demo.Pages
         }
 
         public void ShowAboutAvaloniaUI() => new AboutAvaloniaDialog().ShowDialog(_window!);
-
-        private void InitializeComponent()
-        {
-            AvaloniaXamlLoader.Load(this);
-        }
     }
 }

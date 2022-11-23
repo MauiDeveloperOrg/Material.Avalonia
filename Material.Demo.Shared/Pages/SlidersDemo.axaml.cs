@@ -1,18 +1,13 @@
 ﻿using Avalonia.Controls;
-using Avalonia.Markup.Xaml;
 
 namespace Material.Demo.Pages
 {
-    public class SlidersDemo : UserControl
+    public partial class SlidersDemo : UserControl
     {
         public SlidersDemo()
         {
-            this.InitializeComponent();
+            InitializeComponent();
         }
 
-        private void InitializeComponent()
-        {
-            AvaloniaXamlLoader.Load(this);
-        }
     }
 }

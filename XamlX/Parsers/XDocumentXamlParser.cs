@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Xml;
+﻿using System.Xml;
 using System.Xml.Linq;
 using XamlX.Ast;
 using XamlX.Parsers.SystemXamlMarkupExtensionParser;
@@ -43,7 +39,7 @@ namespace XamlX.Parsers
                 Root = new ParserContext(root).Parse()
             };
 
-            foreach(var attr in root.Attributes())
+            foreach (var attr in root.Attributes())
                 if (attr.Name.NamespaceName == "http://www.w3.org/2000/xmlns/" ||
                     (attr.Name.NamespaceName == "" && attr.Name.LocalName == "xmlns"))
                 {
@@ -76,7 +72,7 @@ namespace XamlX.Parsers
 
             static (string xmlnsKey, string xmlnsVal, string name) ParsePairWithXmlns(IXamlLineInfo info, string typeName, XElement xel)
             {
-                var pair = typeName.Trim().Split(new[] {':'}, 2);
+                var pair = typeName.Trim().Split(new[] { ':' }, 2);
                 string xmlnsKey, xmlnsVal, name;
                 if (pair.Length == 1)
                 {
@@ -232,7 +228,7 @@ namespace XamlX.Parsers
 
                         if (pname.Contains("."))
                         {
-                            var parts = pname.Split(new[] {'.'}, 2);
+                            var parts = pname.Split(new[] { '.' }, 2);
                             pname = parts[1];
                             var ns = attr.Name.Namespace == "" ? el.GetDefaultNamespace().NamespaceName : attr.Name.NamespaceName;
                             ptype = new XamlAstXmlTypeReference(el.AsLi(), ns, parts[0]);
@@ -251,7 +247,7 @@ namespace XamlX.Parsers
                     {
                         if (elementNode.HasAttributes)
                             throw ParseError(node, "Attributes aren't allowed on element properties");
-                        var pair = elementNode.Name.LocalName.Split(new[] {'.'}, 2);
+                        var pair = elementNode.Name.LocalName.Split(new[] { '.' }, 2);
                         i.Children.Add(new XamlAstXamlPropertyValueNode(el.AsLi(), new XamlAstNamePropertyReference
                             (
                                 el.AsLi(),
@@ -301,7 +297,7 @@ namespace XamlX.Parsers
             Exception ParseError(IXmlLineInfo line, string message) =>
                 new XamlParseException(message, line.LineNumber, line.LinePosition);
 
-            public XamlAstObjectNode Parse() => (XamlAstObjectNode) ParseNewInstance(_root, true, XmlSpace.Default);
+            public XamlAstObjectNode Parse() => (XamlAstObjectNode)ParseNewInstance(_root, true, XmlSpace.Default);
         }
     }
 

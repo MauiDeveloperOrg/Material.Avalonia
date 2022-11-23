@@ -5,16 +5,11 @@ using Material.Demo.Models;
 
 namespace Material.Demo.Pages
 {
-    public class SideSheetDemo : UserControl
+    public partial class SideSheetDemo : UserControl
     {
         public SideSheetDemo()
         {
             this.InitializeComponent();
-        }
-
-        private void InitializeComponent()
-        {
-            AvaloniaXamlLoader.Load(this);
         }
 
         private void CloseSideInfoButton_OnClick(object? sender, RoutedEventArgs e)

@@ -11,18 +11,13 @@ using Material.Demo.ViewModels;
 
 namespace Material.Demo.Pages
 {
-    public class DialogDemo : UserControl
+    public partial class DialogDemo : UserControl
     {
         public DialogDemo()
         {
             InitializeComponent();
         }
-
-        private void InitializeComponent()
-        {
-            AvaloniaXamlLoader.Load(this);
-        }
-
+ 
         protected override void OnApplyTemplate(TemplateAppliedEventArgs e)
         {
             // Lazy Initialize view model
@@ -31,15 +26,15 @@ namespace Material.Demo.Pages
             base.OnApplyTemplate(e);
         }
 
-        private void OpenDialogWithView(object? sender, RoutedEventArgs e)
+        private async void OpenDialogWithView(object? sender, RoutedEventArgs e)
         {
-            DialogHost.Show(this.Resources["Sample2View"]!, "MainDialogHost");
+            await DialogHost.Show(this.Resources["Sample2View"]!, "MainDialogHost");
         }
 
-        private void OpenDialogWithModel(object? sender, RoutedEventArgs e)
+        private async void OpenDialogWithModel(object? sender, RoutedEventArgs e)
         {
             // View that associated with this model defined at DialogContentTemplate in DialogDemo.axaml
-            DialogHost.Show(new Sample2Model(new Random().Next(0, 100)), "MainDialogHost");
+           await DialogHost.Show(new Sample2Model(new Random().Next(0, 100)), "MainDialogHost");
         }
 
         private void OpenMoreDialogHostExamples(object? sender, RoutedEventArgs e)

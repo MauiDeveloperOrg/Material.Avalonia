@@ -3,16 +3,12 @@ using Avalonia.Markup.Xaml;
 
 namespace Material.Demo.Pages
 {
-    public class TabsDemo : UserControl
+    public partial class TabsDemo : UserControl
     {
         public TabsDemo()
         {
-            this.InitializeComponent();
+            InitializeComponent();
         }
-
-        private void InitializeComponent()
-        {
-            AvaloniaXamlLoader.Load(this);
-        }
+ 
     }
 }

@@ -1,13 +1,12 @@
-﻿using System.ComponentModel;
-using System.Timers;
-using Avalonia;
+﻿using Avalonia;
 using Avalonia.Controls;
-using Avalonia.Markup.Xaml;
+using System.ComponentModel;
+using System.Timers;
 using Timer = System.Timers.Timer;
 
 namespace Material.Demo.Pages
 {
-    public class ProgressIndicatorDemo : UserControl
+    public partial class ProgressIndicatorDemo : UserControl
     {
         private Timer timer;
         private int caseProgress;
@@ -81,9 +80,6 @@ namespace Material.Demo.Pages
             }
         }
 
-        private void InitializeComponent()
-        {
-            AvaloniaXamlLoader.Load(this);
-        }
+
     }
 }

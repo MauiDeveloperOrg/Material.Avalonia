@@ -36,9 +36,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XamlX", "XamlX\XamlX.csproj
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DialogHost.Avalonia", "DialogHost.Avalonia\DialogHost.Avalonia.csproj", "{3B4DE947-868F-43E2-AF8E-786C1D144E26}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Material.Demo.Shared", "Material.Demo.Shared\Material.Demo.Shared.csproj", "{446908E6-DD0A-4FEB-8778-5D3423255A50}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Material.Demo.Shared", "Material.Demo.Shared\Material.Demo.Shared.csproj", "{446908E6-DD0A-4FEB-8778-5D3423255A50}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Material.Demo.Desktop", "Material.Demo.Desktop\Material.Demo.Desktop.csproj", "{F171570F-4FB4-4898-A8DB-4DF86A760A79}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Material.Demo.Android", "Material.Demo.Android\Material.Demo.Android.csproj", "{FDB8771E-19EE-4E4C-870B-C77D0A795317}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -102,6 +104,11 @@ Global
 		{F171570F-4FB4-4898-A8DB-4DF86A760A79}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F171570F-4FB4-4898-A8DB-4DF86A760A79}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F171570F-4FB4-4898-A8DB-4DF86A760A79}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FDB8771E-19EE-4E4C-870B-C77D0A795317}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FDB8771E-19EE-4E4C-870B-C77D0A795317}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FDB8771E-19EE-4E4C-870B-C77D0A795317}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{FDB8771E-19EE-4E4C-870B-C77D0A795317}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FDB8771E-19EE-4E4C-870B-C77D0A795317}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

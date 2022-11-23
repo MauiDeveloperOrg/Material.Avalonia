@@ -7,7 +7,7 @@ using Material.Demo.ViewModels;
 
 namespace Material.Demo.Pages
 {
-    public class IconsDemo : UserControl
+    public partial class IconsDemo : UserControl
     {
         public IconsDemo()
         {
@@ -15,12 +15,7 @@ namespace Material.Demo.Pages
 
             DataContext = new IconsDemoViewModel();
         }
-
-        private void InitializeComponent()
-        {
-            AvaloniaXamlLoader.Load(this);
-        }
-
+ 
         private void Search_OnKeyDown(object? sender, KeyEventArgs e)
         {
             var textBox = (TextBox) sender!;

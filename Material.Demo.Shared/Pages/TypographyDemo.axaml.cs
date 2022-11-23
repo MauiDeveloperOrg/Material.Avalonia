@@ -3,16 +3,12 @@ using Avalonia.Markup.Xaml;
 
 namespace Material.Demo.Pages
 {
-    public class TypographyDemo : UserControl
+    public partial class TypographyDemo : UserControl
     {
         public TypographyDemo()
         {
-            this.InitializeComponent();
+            InitializeComponent();
         }
-
-        private void InitializeComponent()
-        {
-            AvaloniaXamlLoader.Load(this);
-        }
+ 
     }
 }

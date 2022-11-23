@@ -1,8 +1,10 @@
 ﻿<Application xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+			 xmlns:local="using:Material.Demo"
              xmlns:themes="clr-namespace:Material.Styles.Themes;assembly=Material.Styles"
              xmlns:showMeTheXaml="clr-namespace:ShowMeTheXaml;assembly=ShowMeTheXaml.Avalonia"
-             x:Class="Material.Demo.App">
+             x:Class="Material.Demo.Shared.App">
+	
     <Application.Styles>
         <themes:MaterialTheme BaseTheme="Light"
                             PrimaryColor="Purple"

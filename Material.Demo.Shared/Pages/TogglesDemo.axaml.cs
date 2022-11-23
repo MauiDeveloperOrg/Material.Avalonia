@@ -3,11 +3,11 @@ using Avalonia.Markup.Xaml;
 
 namespace Material.Demo.Pages
 {
-    public class TogglesDemo : UserControl
+    public partial class TogglesDemo : UserControl
     {
         public TogglesDemo()
         {
-            this.InitializeComponent();
+            InitializeComponent();
         }
 
         private void InitializeComponent()

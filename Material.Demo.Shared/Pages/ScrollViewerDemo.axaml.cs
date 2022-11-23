@@ -3,16 +3,12 @@ using Avalonia.Markup.Xaml;
 
 namespace Material.Demo.Pages
 {
-    public class ScrollViewerDemo : UserControl
+    public partial class ScrollViewerDemo : UserControl
     {
         public ScrollViewerDemo()
         {
-            this.InitializeComponent();
+            InitializeComponent();
         }
-
-        private void InitializeComponent()
-        {
-            AvaloniaXamlLoader.Load(this);
-        }
+ 
     }
 }

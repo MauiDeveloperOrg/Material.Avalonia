@@ -4,7 +4,7 @@ using Material.Demo.ViewModels;
 
 namespace Material.Demo.Pages
 {
-    public class FieldsDemo : UserControl
+    public partial class FieldsDemo : UserControl
     {
         public FieldsDemo()
         {
@@ -12,10 +12,6 @@ namespace Material.Demo.Pages
 
             DataContext = new TextFieldsViewModel();
         }
-
-        private void InitializeComponent()
-        {
-            AvaloniaXamlLoader.Load(this);
-        }
+         
     }
 }

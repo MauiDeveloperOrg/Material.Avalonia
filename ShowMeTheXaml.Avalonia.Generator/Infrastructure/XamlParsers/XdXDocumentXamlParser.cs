@@ -1,7 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
 using System.Xml;
 using System.Xml.Linq;
 using XamlX;
@@ -11,26 +7,32 @@ using XamlX.Parsers.SystemXamlMarkupExtensionParser;
 
 namespace ShowMeTheXaml.Avalonia.Infrastructure.XamlParsers;
 
-internal class XdXDocumentXamlParser {
-    public static XamlDocument Parse(string s, Dictionary<string, string> compatibilityMappings = null) {
+internal class XdXDocumentXamlParser
+{
+    public static XamlDocument Parse(string s, Dictionary<string, string> compatibilityMappings = null)
+    {
         return Parse(new StringReader(s), compatibilityMappings);
     }
 
-    public static XamlDocument Parse(TextReader reader, Dictionary<string, string> compatibilityMappings = null) {
-        var xr = XmlReader.Create(reader, new XmlReaderSettings {
+    public static XamlDocument Parse(TextReader reader, Dictionary<string, string> compatibilityMappings = null)
+    {
+        var xr = XmlReader.Create(reader, new XmlReaderSettings
+        {
             DtdProcessing = DtdProcessing.Ignore
         });
         xr = new CompatibleXmlReader(xr, compatibilityMappings ?? new Dictionary<string, string>());
 
         var root = XDocument.Load(xr, LoadOptions.SetLineInfo).Root;
 
-        var doc = new XamlDocument {
+        var doc = new XamlDocument
+        {
             Root = new ParserContext(root).Parse()
         };
 
         foreach (var attr in root.Attributes())
             if (attr.Name.NamespaceName == "http://www.w3.org/2000/xmlns/" ||
-                (attr.Name.NamespaceName == "" && attr.Name.LocalName == "xmlns")) {
+                (attr.Name.NamespaceName == "" && attr.Name.LocalName == "xmlns"))
+            {
                 var name = attr.Name.NamespaceName == "" ? "" : attr.Name.LocalName;
                 doc.NamespaceAliases[name] = attr.Value;
             }
@@ -39,10 +41,12 @@ internal class XdXDocumentXamlParser {
     }
 
 
-    class ParserContext {
+    class ParserContext
+    {
         private readonly XElement _root;
 
-        public ParserContext(XElement root) {
+        public ParserContext(XElement root)
+        {
             _root = root;
         }
 
@@ -57,14 +61,17 @@ internal class XdXDocumentXamlParser {
                     ? xel.GetDefaultNamespace().NamespaceName
                     : xel.GetNamespaceOfPrefix(ns)?.NamespaceName ?? "");
 
-        static XamlAstXmlTypeReference ParseTypeName(IXamlLineInfo info, string typeName, Func<string, string> prefixResolver) {
+        static XamlAstXmlTypeReference ParseTypeName(IXamlLineInfo info, string typeName, Func<string, string> prefixResolver)
+        {
             var pair = typeName.Trim().Split(new[] { ':' }, 2);
             string xmlns, name;
-            if (pair.Length == 1) {
+            if (pair.Length == 1)
+            {
                 xmlns = prefixResolver("");
                 name = pair[0];
             }
-            else {
+            else
+            {
                 xmlns = prefixResolver(pair[0]);
                 if (xmlns == null)
                     throw new XamlParseException($"Namespace '{pair[0]}' is not recognized", info);
@@ -73,9 +80,12 @@ internal class XdXDocumentXamlParser {
             return new XamlAstXmlTypeReference(info, xmlns, name);
         }
 
-        static List<XamlAstXmlTypeReference> ParseTypeArguments(string args, XElement xel, IXamlLineInfo info) {
-            try {
-                XamlAstXmlTypeReference Parse(CommaSeparatedParenthesesTreeParser.Node node) {
+        static List<XamlAstXmlTypeReference> ParseTypeArguments(string args, XElement xel, IXamlLineInfo info)
+        {
+            try
+            {
+                XamlAstXmlTypeReference Parse(CommaSeparatedParenthesesTreeParser.Node node)
+                {
                     var rv = ParseTypeName(info, node.Value, xel);
 
                     if (node.Children.Count != 0)
@@ -86,22 +96,28 @@ internal class XdXDocumentXamlParser {
                 var tree = CommaSeparatedParenthesesTreeParser.Parse(args);
                 return tree.Select(Parse).ToList();
             }
-            catch (CommaSeparatedParenthesesTreeParser.ParseException e) {
+            catch (CommaSeparatedParenthesesTreeParser.ParseException e)
+            {
                 throw new XamlParseException(e.Message, info);
             }
         }
 
-        static IXamlAstValueNode ParseTextValueOrMarkupExtension(string ext, XElement xel, IXamlLineInfo info) {
-            if (ext.StartsWith("{") || ext.StartsWith(@"\{")) {
+        static IXamlAstValueNode ParseTextValueOrMarkupExtension(string ext, XElement xel, IXamlLineInfo info)
+        {
+            if (ext.StartsWith("{") || ext.StartsWith(@"\{"))
+            {
                 if (ext.StartsWith("{}"))
                     ext = ext.Substring(2);
-                else {
-                    try {
+                else
+                {
+                    try
+                    {
 
                         return SystemXamlMarkupExtensionParser.Parse(info, ext,
                             t => ParseTypeName(info, t, xel));
                     }
-                    catch (MeScannerParseException parseEx) {
+                    catch (MeScannerParseException parseEx)
+                    {
                         throw new XamlParseException(parseEx.Message, info);
                     }
                 }
@@ -111,9 +127,11 @@ internal class XdXDocumentXamlParser {
             return new XamlAstTextNode(info, ext, true);
         }
 
-        XamlAstObjectNode ParseNewInstance(XElement el, bool root, XmlSpace spaceMode) {
+        XamlAstObjectNode ParseNewInstance(XElement el, bool root, XmlSpace spaceMode)
+        {
             var declaredMode = el.GetDeclaredWhitespaceMode();
-            if (declaredMode != XmlSpace.None) {
+            if (declaredMode != XmlSpace.None)
+            {
                 spaceMode = declaredMode;
             }
 
@@ -121,14 +139,17 @@ internal class XdXDocumentXamlParser {
                 throw ParseError(el, "Dots aren't allowed in type names");
             var type = GetTypeReference(el);
             var i = new XamlAstObjectTextNode(el.AsLi(), type, el);
-            foreach (var attr in el.Attributes()) {
+            foreach (var attr in el.Attributes())
+            {
                 if (attr.Name.NamespaceName == "http://www.w3.org/2000/xmlns/" ||
-                    (attr.Name.NamespaceName == "" && attr.Name.LocalName == "xmlns")) {
+                    (attr.Name.NamespaceName == "" && attr.Name.LocalName == "xmlns"))
+                {
                     if (!root)
                         throw ParseError(attr,
                             "xmlns declarations are only allowed on the root element to preserve memory");
                 }
-                else if (attr.Name.NamespaceName.StartsWith("http://www.w3.org")) {
+                else if (attr.Name.NamespaceName.StartsWith("http://www.w3.org"))
+                {
                     // Silently ignore all xml-parser related attributes
                 }
                 // Parse type arguments
@@ -143,11 +164,13 @@ internal class XdXDocumentXamlParser {
                         }
                     ));
                 // Parse as a property
-                else {
+                else
+                {
                     var pname = attr.Name.LocalName;
                     var ptype = i.Type;
 
-                    if (pname.Contains(".")) {
+                    if (pname.Contains("."))
+                    {
                         var parts = pname.Split(new[] { '.' }, 2);
                         pname = parts[1];
                         var ns = attr.Name.Namespace == "" ? el.GetDefaultNamespace().NamespaceName : attr.Name.NamespaceName;
@@ -161,8 +184,10 @@ internal class XdXDocumentXamlParser {
             }
 
 
-            foreach (var node in el.Nodes()) {
-                if (node is XElement elementNode && elementNode.Name.LocalName.Contains(".")) {
+            foreach (var node in el.Nodes())
+            {
+                if (node is XElement elementNode && elementNode.Name.LocalName.Contains("."))
+                {
                     if (elementNode.HasAttributes)
                         throw ParseError(node, "Attributes aren't allowed on element properties");
                     var pair = elementNode.Name.LocalName.Split(new[] { '.' }, 2);
@@ -175,7 +200,8 @@ internal class XdXDocumentXamlParser {
                         ParseValueNodeChildren(elementNode, spaceMode)
                     ));
                 }
-                else {
+                else
+                {
                     var parsed = ParseValueNode(node, spaceMode);
                     if (parsed != null)
                         i.Children.Add(parsed);
@@ -186,10 +212,12 @@ internal class XdXDocumentXamlParser {
             return i;
         }
 
-        IXamlAstValueNode ParseValueNode(XNode node, XmlSpace spaceMode) {
+        IXamlAstValueNode ParseValueNode(XNode node, XmlSpace spaceMode)
+        {
             if (node is XElement el)
                 return ParseNewInstance(el, false, spaceMode);
-            if (node is XText text) {
+            if (node is XText text)
+            {
                 var preserveWhitespace = spaceMode == XmlSpace.Preserve;
                 return new XamlAstTextNode(node.AsLi(), text.Value, preserveWhitespace);
             }
@@ -197,9 +225,11 @@ internal class XdXDocumentXamlParser {
             return null;
         }
 
-        List<IXamlAstValueNode> ParseValueNodeChildren(XElement parent, XmlSpace spaceMode) {
+        List<IXamlAstValueNode> ParseValueNodeChildren(XElement parent, XmlSpace spaceMode)
+        {
             var lst = new List<IXamlAstValueNode>();
-            foreach (var n in parent.Nodes()) {
+            foreach (var n in parent.Nodes())
+            {
                 var parsed = ParseValueNode(n, spaceMode);
                 if (parsed != null)
                     lst.Add(parsed);

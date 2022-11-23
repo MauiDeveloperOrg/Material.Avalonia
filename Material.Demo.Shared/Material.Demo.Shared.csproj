@@ -7,7 +7,10 @@
 	<ItemGroup>
 		<PackageReference Include="Avalonia" />
 		<PackageReference Include="Avalonia.Controls.DataGrid" />
-		<PackageReference Include="Avalonia.Themes.Simple" /> 
+		<PackageReference Include="Avalonia.Themes.Simple" />
+		<PackageReference Include="Avalonia.ReactiveUI" />
+		<PackageReference Include="XamlNameReferenceGenerator"/>
+		<PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics"/>
 	</ItemGroup>
 	<ItemGroup>
 		<ProjectReference Include="..\DialogHost.Avalonia\DialogHost.Avalonia.csproj" />
@@ -22,8 +25,9 @@
 
 	<ItemGroup>
 		<AvaloniaResource Include="Assets\**" />
+		<TrimmerRootDescriptor Include="Roots.xml" />
 	</ItemGroup>
-
+	
 	<ItemGroup>
 		<AdditionalFiles Include="**\*.xaml" />
 		<AdditionalFiles Include="**\*.axaml" />

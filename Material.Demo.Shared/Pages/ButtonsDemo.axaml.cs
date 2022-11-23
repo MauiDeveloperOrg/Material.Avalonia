@@ -3,16 +3,11 @@ using Avalonia.Markup.Xaml;
 
 namespace Material.Demo.Pages
 {
-    public class ButtonsDemo : UserControl
+    public partial class ButtonsDemo : UserControl
     {
         public ButtonsDemo()
         {
-            this.InitializeComponent();
-        }
-
-        private void InitializeComponent()
-        {
-            AvaloniaXamlLoader.Load(this);
-        }
+            InitializeComponent();
+        } 
     }
 }

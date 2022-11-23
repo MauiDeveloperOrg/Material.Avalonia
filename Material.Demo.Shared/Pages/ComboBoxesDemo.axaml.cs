@@ -3,16 +3,12 @@ using Avalonia.Markup.Xaml;
 
 namespace Material.Demo.Pages
 {
-    public class ComboBoxesDemo : UserControl
+    public partial class ComboBoxesDemo : UserControl
     {
         public ComboBoxesDemo()
         {
-            this.InitializeComponent();
+            InitializeComponent();
         }
-
-        private void InitializeComponent()
-        {
-            AvaloniaXamlLoader.Load(this);
-        }
+         
     }
 }

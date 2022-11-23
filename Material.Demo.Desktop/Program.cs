@@ -1,5 +1,6 @@
 ﻿using System;
 using Avalonia;
+using Material.Demo.Shared;
 using ShowMeTheXaml;
 
 namespace Material.Demo.Desktop
