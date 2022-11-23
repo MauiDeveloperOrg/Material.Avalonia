@@ -6,7 +6,6 @@
              xmlns:pages="clr-namespace:Material.Demo.Pages"
 			 xmlns:avalonia="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
 			 xmlns:controls="clr-namespace:Material.Styles.Controls;assembly=Material.Styles"
-			 xmlns:dialogHostAvalonia="clr-namespace:DialogHostAvalonia;assembly=DialogHost.Avalonia"
 			 xmlns:models="clr-namespace:Material.Demo.Models"
 			 mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              >
