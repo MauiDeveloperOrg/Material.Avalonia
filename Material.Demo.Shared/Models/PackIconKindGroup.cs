@@ -15,7 +15,8 @@ namespace Material.Demo.Models
             var allValues = kinds.ToList();
             if (!allValues.Any()) throw new ArgumentException($"{nameof(kinds)} must contain at least one value");
             Kind = allValues.First();
-            KindValue = Enum.Parse<MaterialIconKind>(Kind);
+            Enum.TryParse<MaterialIconKind>(Kind,out var kindValue);
+            KindValue = kindValue;
             Aliases = allValues
                 .OrderBy(x => x, StringComparer.InvariantCultureIgnoreCase)
                 .ToArray();

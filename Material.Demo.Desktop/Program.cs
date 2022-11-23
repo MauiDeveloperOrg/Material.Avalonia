@@ -2,7 +2,7 @@
 using Avalonia;
 using ShowMeTheXaml;
 
-namespace Material.Demo
+namespace Material.Demo.Desktop
 {
     internal class Program
     {

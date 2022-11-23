@@ -59,7 +59,7 @@
             <showMeTheXaml:XamlDisplay UniqueId="Cards3">
                 <controls:Card Width="240" Padding="0" VerticalAlignment="Top">
                     <StackPanel>
-                        <Image Source="avares://Material.Demo/Assets/johannes-plenio-RwHv7LgeC7s-unsplash.jpg" />
+                        <Image Source="avares://Material.Demo.Shared/Assets/johannes-plenio-RwHv7LgeC7s-unsplash.jpg" />
                         <StackPanel Margin="16">
                             <TextBlock Classes="Headline6" Text="Autumn is come!" />
                             <TextBlock Margin="0,12,0,0" TextWrapping="Wrap"
