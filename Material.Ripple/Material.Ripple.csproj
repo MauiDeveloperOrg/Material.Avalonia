@@ -9,7 +9,6 @@
     <PackageProjectUrl>https://github.com/AvaloniaUtils/material.avalonia</PackageProjectUrl>
     <RepositoryUrl>https://github.com/AvaloniaUtils/material.avalonia</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
-    <LangVersion>latest</LangVersion>
   </PropertyGroup>
 
   <ItemGroup>
@@ -24,7 +23,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Avalonia" Version="11.0.0-preview1" />
+    <PackageReference Include="Avalonia"/>
   </ItemGroup>
 
 </Project>

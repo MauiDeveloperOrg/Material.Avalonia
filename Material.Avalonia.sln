@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.29409.12
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33103.201
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Material.Demo", "Material.Demo\Material.Demo.csproj", "{ECB440AE-658B-4602-87CD-BE7FE8285362}"
 EndProject
@@ -15,7 +15,28 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Material.Colors", "Material
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Material.DataGrid", "Material.DataGrid\Material.DataGrid.csproj", "{E0F697EE-358C-4E73-A4A8-3279B5B8DFF3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Material.Dialog", "Material.Dialog\Material.Dialog.csproj", "{4F5F7FFD-B6E2-4C36-B250-D6B8169A0B1A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Material.Dialog", "Material.Dialog\Material.Dialog.csproj", "{4F5F7FFD-B6E2-4C36-B250-D6B8169A0B1A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{7544EA56-175D-41AC-B491-8E41D65B8F66}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		Directory.build.props = Directory.build.props
+		Directory.build.targets = Directory.build.targets
+		Directory.Packages.props = Directory.Packages.props
+		global.json = global.json
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Material.Icons.Avalonia", "Material.Icons.Avalonia\Material.Icons.Avalonia.csproj", "{D777329D-D9C1-469E-8B52-37C85C1794D1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShowMeTheXaml.Avalonia", "ShowMeTheXaml.Avalonia\ShowMeTheXaml.Avalonia.csproj", "{24C89C33-C574-4574-BFBA-1047CD276DA3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShowMeTheXaml.Avalonia.AvaloniaEdit", "ShowMeTheXaml.Avalonia.AvaloniaEdit\ShowMeTheXaml.Avalonia.AvaloniaEdit.csproj", "{B6D363AD-4E6B-45FF-82BE-258FF9D45046}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShowMeTheXaml.Avalonia.Generator", "ShowMeTheXaml.Avalonia.Generator\ShowMeTheXaml.Avalonia.Generator.csproj", "{F39A5EA0-BEE7-4409-BAC5-809F24BAE3A6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XamlX", "XamlX\XamlX.csproj", "{0510D14F-1D2E-4E02-B864-B0F95CA750E7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DialogHost.Avalonia", "DialogHost.Avalonia\DialogHost.Avalonia.csproj", "{3B4DE947-868F-43E2-AF8E-786C1D144E26}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +72,30 @@ Global
 		{4F5F7FFD-B6E2-4C36-B250-D6B8169A0B1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4F5F7FFD-B6E2-4C36-B250-D6B8169A0B1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4F5F7FFD-B6E2-4C36-B250-D6B8169A0B1A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D777329D-D9C1-469E-8B52-37C85C1794D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D777329D-D9C1-469E-8B52-37C85C1794D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D777329D-D9C1-469E-8B52-37C85C1794D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D777329D-D9C1-469E-8B52-37C85C1794D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{24C89C33-C574-4574-BFBA-1047CD276DA3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24C89C33-C574-4574-BFBA-1047CD276DA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24C89C33-C574-4574-BFBA-1047CD276DA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24C89C33-C574-4574-BFBA-1047CD276DA3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B6D363AD-4E6B-45FF-82BE-258FF9D45046}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6D363AD-4E6B-45FF-82BE-258FF9D45046}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6D363AD-4E6B-45FF-82BE-258FF9D45046}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6D363AD-4E6B-45FF-82BE-258FF9D45046}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F39A5EA0-BEE7-4409-BAC5-809F24BAE3A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F39A5EA0-BEE7-4409-BAC5-809F24BAE3A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F39A5EA0-BEE7-4409-BAC5-809F24BAE3A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F39A5EA0-BEE7-4409-BAC5-809F24BAE3A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0510D14F-1D2E-4E02-B864-B0F95CA750E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0510D14F-1D2E-4E02-B864-B0F95CA750E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0510D14F-1D2E-4E02-B864-B0F95CA750E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0510D14F-1D2E-4E02-B864-B0F95CA750E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3B4DE947-868F-43E2-AF8E-786C1D144E26}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B4DE947-868F-43E2-AF8E-786C1D144E26}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B4DE947-868F-43E2-AF8E-786C1D144E26}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B4DE947-868F-43E2-AF8E-786C1D144E26}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

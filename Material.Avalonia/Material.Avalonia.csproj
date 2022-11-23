@@ -8,7 +8,6 @@
         <PackageProjectUrl>https://github.com/AvaloniaCommunity/Material.Avalonia</PackageProjectUrl>
         <RepositoryUrl>https://github.com/AvaloniaCommunity/Material.Avalonia</RepositoryUrl>
         <RepositoryType>git</RepositoryType>
-        <LangVersion>8</LangVersion>
         <PackageTags>avalonia xaml material design theme colour color ui ux material-design google-material</PackageTags>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <PackageReadmeFile>README.md</PackageReadmeFile>
@@ -38,7 +37,7 @@ This is UNSTABLE version, I think what many things do not work properly here, re
     </ItemGroup>
 
     <ItemGroup>
-      <PackageReference Include="Avalonia" Version="11.0.0-preview1" />
+      <PackageReference Include="Avalonia"/>
     </ItemGroup>
 
     <ItemGroup>

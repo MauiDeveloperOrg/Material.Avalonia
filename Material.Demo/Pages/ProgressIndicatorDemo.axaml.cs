@@ -3,6 +3,7 @@ using System.Timers;
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
+using Timer = System.Timers.Timer;
 
 namespace Material.Demo.Pages
 {

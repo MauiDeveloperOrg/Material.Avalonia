@@ -10,6 +10,7 @@ using Avalonia.Layout;
 using Avalonia.Threading;
 using Material.Styles.Commands;
 using Material.Styles.Models;
+using Timer = System.Timers.Timer;
 
 namespace Material.Styles.Controls
 {

@@ -11,12 +11,11 @@
     <PackageProjectUrl>https://github.com/AvaloniaUtils/material.avalonia</PackageProjectUrl>
     <RepositoryUrl>https://github.com/AvaloniaUtils/material.avalonia</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
-    <LangVersion>8</LangVersion>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Avalonia" Version="11.0.0-preview1" />
-    <PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="11.0.0-preview1" />
+    <PackageReference Include="Avalonia"/>
+    <PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics"/>
   </ItemGroup>
 
   <ItemGroup>

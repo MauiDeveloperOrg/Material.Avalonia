@@ -25,7 +25,7 @@ namespace Material.Demo.Pages
         {
             var textBox = (TextBox) sender!;
             if (e.Key == Key.Enter)
-                this.Get<Button>("SearchButton").Command.Execute(textBox.Text);
+                this.Get<Button>("SearchButton")?.Command?.Execute(textBox.Text);
         }
 
         private void TextBox_OnGotFocus(object? sender, GotFocusEventArgs e)

@@ -3,14 +3,13 @@
     <PropertyGroup>
         <TargetFramework>netstandard2.0</TargetFramework>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-        <LangVersion>10</LangVersion>
         <Authors>Larymar,SKProCH,Appleneko2001</Authors>
         <Company>Larymar,SKProCH,Appleneko2001</Company>
         <PackageProjectUrl>https://github.com/AvaloniaUtils/material.avalonia</PackageProjectUrl>
         <RepositoryUrl>https://github.com/AvaloniaUtils/material.avalonia</RepositoryUrl>
         <RepositoryType>git</RepositoryType>
         <Description>Main styles library of Material.Avalonia.</Description>
-        <Nullable>enable</Nullable>
+		<Version>1.0.0-pre</Version>
     </PropertyGroup>
 
     <ItemGroup>
@@ -18,22 +17,7 @@
             <SubType>Designer</SubType>
         </AvaloniaResource>
     </ItemGroup>
-
-    <ItemGroup> 
-      <None Remove="Fonts\Roboto\Roboto-Black.ttf" />
-      <None Remove="Fonts\Roboto\Roboto-BlackItalic.ttf" />
-      <None Remove="Fonts\Roboto\Roboto-Bold.ttf" />
-      <None Remove="Fonts\Roboto\Roboto-BoldItalic.ttf" />
-      <None Remove="Fonts\Roboto\Roboto-Italic.ttf" />
-      <None Remove="Fonts\Roboto\Roboto-Light.ttf" />
-      <None Remove="Fonts\Roboto\Roboto-LightItalic.ttf" />
-      <None Remove="Fonts\Roboto\Roboto-Medium.ttf" />
-      <None Remove="Fonts\Roboto\Roboto-MediumItalic.ttf" />
-      <None Remove="Fonts\Roboto\Roboto-Regular.ttf" />
-      <None Remove="Fonts\Roboto\Roboto-Thin.ttf" />
-      <None Remove="Fonts\Roboto\Roboto-ThinItalic.ttf" />
-    </ItemGroup>
-
+	
     <ItemGroup>
       <AvaloniaResource Include="Fonts\Roboto\Roboto-Black.ttf" />
       <AvaloniaResource Include="Fonts\Roboto\Roboto-BlackItalic.ttf" />
@@ -55,7 +39,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <PackageReference Include="Avalonia" Version="11.0.0-preview1" />
+      <PackageReference Include="Avalonia"/>
     </ItemGroup>
 
 </Project>
