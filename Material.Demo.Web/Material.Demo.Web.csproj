@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+	  <TargetFramework>net7.0</TargetFramework>
+	  <RuntimeIdentifier>browser-wasm</RuntimeIdentifier>
+	  <WasmMainJSPath>AppBundle\main.js</WasmMainJSPath>
+	  <OutputType>Exe</OutputType>
+  </PropertyGroup>
+
+	<ItemGroup>
+		<WasmExtraFilesToDeploy Include="AppBundle\**" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Avalonia.Web" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\Material.Demo.Shared\Material.Demo.Shared.csproj" />
+	</ItemGroup>
+
+</Project>

@@ -42,6 +42,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Material.Demo.Desktop", "Ma
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Material.Demo.Android", "Material.Demo.Android\Material.Demo.Android.csproj", "{FDB8771E-19EE-4E4C-870B-C77D0A795317}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Material.Demo.iOS", "Material.Demo.iOS\Material.Demo.iOS.csproj", "{17C1CAF2-1AB1-450C-BD5A-051FE5581F20}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Material.Demo.Web", "Material.Demo.Web\Material.Demo.Web.csproj", "{D0925FA2-A977-4595-8A56-7058C9FF95D6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -109,6 +113,16 @@ Global
 		{FDB8771E-19EE-4E4C-870B-C77D0A795317}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
 		{FDB8771E-19EE-4E4C-870B-C77D0A795317}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FDB8771E-19EE-4E4C-870B-C77D0A795317}.Release|Any CPU.Build.0 = Release|Any CPU
+		{17C1CAF2-1AB1-450C-BD5A-051FE5581F20}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17C1CAF2-1AB1-450C-BD5A-051FE5581F20}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17C1CAF2-1AB1-450C-BD5A-051FE5581F20}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{17C1CAF2-1AB1-450C-BD5A-051FE5581F20}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17C1CAF2-1AB1-450C-BD5A-051FE5581F20}.Release|Any CPU.Build.0 = Release|Any CPU
+		{17C1CAF2-1AB1-450C-BD5A-051FE5581F20}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{D0925FA2-A977-4595-8A56-7058C9FF95D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0925FA2-A977-4595-8A56-7058C9FF95D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0925FA2-A977-4595-8A56-7058C9FF95D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0925FA2-A977-4595-8A56-7058C9FF95D6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
